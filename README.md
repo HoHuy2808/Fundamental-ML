@@ -8,7 +8,7 @@ This repository contains the code and data for a mini-project on facial expressi
     |No.| Student Name    | Student ID |
     | --------| -------- | ------- |
     |1|Hồ Huy|21110307|
-    |2|Võ Hoàng Khang||
+    |2|Võ Hoàng Khang|21110317|
     |3|Lê Huỳnh Minh Tâm||
     |4|||
 
