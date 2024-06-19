@@ -43,4 +43,26 @@ This project is designed to be completed in the following steps:
 
 Feel free to modify and extend the notebook to explore further aspects of the data and experiment with different algorithms. Good luck.
 
-# Mini-Project for Fundamentals of Machine Learning Course:
+# **Mini-Project for Fundamentals of Machine Learning Course:
+## Motivation:
+One motivation for representation learning is that learning algorithms can design features more effectively and efficiently than humans can. However, this challenge does not explicitly require entries to use representation learning. The dataset, assembled from the internet, is designed for facial expression classification.
+
+## Dataset:
+The data consists of grayscale images of faces, each measuring 48x48 pixels. The faces have been automatically aligned to be roughly centered and occupy a similar area within each image. The task is to categorize each face based on the emotion expressed, assigning it to one of seven categories (0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral).
+The dataset contains a total of 35,887 examples.
+
+## Prerequisites:
+The following Python libraries are required:
+1. pandas
+2. numpy
+3. cv2
+4. os
+5. matplotlib.pyplot
+The parse_data() and show_img() functions are provided to read the dataset and visualize the images and labels.
+
+### Data Analysis:
+The dataset is analyzed to understand the distribution of emotion occurrences. The results show that the mean of all emotion counts is {m}.
+
+### Usage:
+To run the facial expression recognition model, follow these steps:
+1. 
