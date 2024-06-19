@@ -87,7 +87,7 @@ This code snippet demonstrates the use of PCA for dimensionality reduction and v
 #### Determining the Optimal Number of Principal Components:
 1. PCA is performed again with a higher number of components (`n_components=2`).
 2. The cumulative explained variance ratio (`cumulative_sum`) is plotted against the number of components to visualize how much variance is explained as the number of components increases.
-3. The plot helps in determining the optimal number of principal components based on the cumulative explained variance.
+3. The plot help in determining the optimal number of principal components based on the cumulative explained variance.
 
 ### Explanation:
 1. Visualization: PCA reduces the dimensionality of the data while preserving as much variance as possible. Visualizing data projected onto two principal components provides insight into the distribution and separation of data points in reduced dimensions.
