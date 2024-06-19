@@ -85,7 +85,26 @@ The selection process is as follows:
 
 In this case, the plot shows that the cumulative explained variance ratio reaches around 95% with about 500 principal components. So a reasonable choice for the optimal number of principal components would be 500.
 
+## 3. Image Classification:
+### Data Preparation:
+1. The original data is loaded, and the pixels column is converted to a numpy array.
+2. The data is split into training and testing sets using train_test_split.
+3. The data is scaled using StandardScaler.
 
+### Hyperparameter Tuning:
+1. Parameter grids are defined for each of the four classifiers: RandomForestClassifier, DecisionTreeClassifier, MLPClassifier, and KNeighborsClassifier.
+2. The perform_grid_search function is used to perform a grid search for each classifier, finding the best set of hyperparameters and the corresponding cross-validation score.
+3. The best estimators are then trained on the full training set.
+
+### Model Evaluation:
+The best estimators are tested on the held-out test set, and various performance metrics (accuracy, F1 score, recall, and precision) are calculated and stored in the metrics dictionary.
+
+### PCA Transformation:
+1. The original data is transformed using PCA, keeping 100 principal components to retain 90% of the information.
+2. The transformed data is again split into training and testing sets, and scaled using StandardScaler.
+
+### Hyperparameter Tuning with PCA:
+The same process of hyperparameter tuning, training, and evaluation is repeated on the transformed data, and the results are stored in the metrics_pca dictionary.
 
 
 
