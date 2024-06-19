@@ -86,25 +86,48 @@ The selection process is as follows:
 In this case, the plot shows that the cumulative explained variance ratio reaches around 95% with about 500 principal components. So a reasonable choice for the optimal number of principal components would be 500.
 
 ## 3. Image Classification:
-### Data Preparation:
-1. The original data is loaded, and the pixels column is converted to a numpy array.
-2. The data is split into training and testing sets using train_test_split.
-3. The data is scaled using StandardScaler.
+### Overview:
+This code snippet demonstrates how to perform image classification using different machine learning classifiers both with and without Principal Component Analysis (PCA). The goal is to evaluate the performance of these classifiers in terms of accuracy, F1 score, recall, and precision on a dataset of images represented as pixel values.
 
-### Hyperparameter Tuning:
-1. Parameter grids are defined for each of the four classifiers: RandomForestClassifier, DecisionTreeClassifier, MLPClassifier, and KNeighborsClassifier.
-2. The perform_grid_search function is used to perform a grid search for each classifier, finding the best set of hyperparameters and the corresponding cross-validation score.
-3. The best estimators are then trained on the full training set.
+### Libraries Used:
+`scikit-learn` for building classifiers, preprocessing data, and evaluating performance.
+`numpy` for handling array operations efficiently.
 
-### Model Evaluation:
-The best estimators are tested on the held-out test set, and various performance metrics (accuracy, F1 score, recall, and precision) are calculated and stored in the metrics dictionary.
+### Steps:
+#### Original Data:
+1. The original dataset (df) contains emotion labels (y) and pixel values (X). The pixel values are processed from strings to numpy arrays.
+2. Data is split into training and test sets using `train_test_split`.
 
-### PCA Transformation:
-1. The original data is transformed using PCA, keeping 100 principal components to retain 90% of the information.
-2. The transformed data is again split into training and testing sets, and scaled using StandardScaler.
+#### Classifiers without PCA:
+1. Classifiers such as RandomForestClassifier, DecisionTreeClassifier, MLPClassifier, and KNeighborsClassifier are initialized with predefined parameter grids for hyperparameter tuning.
+2. Grid search (GridSearchCV) is used to find the best hyperparameters for each classifier based on accuracy.
+3. The best model for each classifier is trained on the training set and evaluated on the test set.
+4. Metrics including accuracy, F1 score, recall, and precision are calculated and stored for further analysis.
 
-### Hyperparameter Tuning with PCA:
-The same process of hyperparameter tuning, training, and evaluation is repeated on the transformed data, and the results are stored in the metrics_pca dictionary.
+#### Classifiers with PCA
+1. PCA is applied to reduce the dimensionality of the data while retaining 90% of its variance. The number of principal components chosen is 100 based on a prior analysis.
+2. The data is standardized using StandardScaler after PCA transformation.
+3. The same set of classifiers and parameter grids are used as in the original data case.
+4. Similarly, hyperparameter tuning, training, and evaluation are performed for each classifier.
+5. Metrics (accuracy, F1 score, recall, precision) for classifiers with PCA are stored separately for comparison.
+
+### Code Explanation:
+The provided code includes functions and loops to automate:
+1. Hyperparameter tuning (perform_grid_search function).
+2. Training and evaluation of models.
+3. Storage of performance metrics in dictionaries (metrics and metrics_pca).
+
+### Usage:
+1. Ensure scikit-learn, numpy, and relevant dependencies are installed.
+2. Replace df with your dataset containing emotions and pixel values.
+3. Adjust parameter grids (param_grids) and classifier settings based on specific requirements.
+4. Run the script to obtain performance metrics and compare the effectiveness of classifiers with and without PCA.
+
+### Notes:
+1. Performance metrics such as accuracy, F1 score, recall, and precision are essential for evaluating classification models.
+2. Results may vary based on dataset characteristics, parameter settings, and preprocessing steps.
+
+
 
 ## 4. Evaluating Classification Performance
 ### Overview:
