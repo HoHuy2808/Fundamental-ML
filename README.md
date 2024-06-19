@@ -106,12 +106,26 @@ The best estimators are tested on the held-out test set, and various performance
 ### Hyperparameter Tuning with PCA:
 The same process of hyperparameter tuning, training, and evaluation is repeated on the transformed data, and the results are stored in the metrics_pca dictionary.
 
+## 4. Evaluating Classification Performance
+### Overview:
+This code snippet demonstrates how to evaluate the performance of classification models using various metrics such as accuracy, F1 score, recall, and precision. It compares models with and without Principal Component Analysis (PCA) and identifies the best-performing models based on different metrics.
 
+### Code Explanation:
+#### Best Model without PCA:
+This part identifies and prints the best-performing model without PCA based on:
+1. Model: The classifier achieving the highest accuracy.
+2. Accuracy: Highest accuracy score among all classifiers.
+3. F1 Score: Highest F1 score among all classifiers.
+4. Recall: Highest recall score among all classifiers.
+5. Precision: Highest precision score among all classifiers.
 
+### Usage:
+To use this code:
+1. Ensure that metrics and metrics_pca dictionaries/lists are correctly populated with classifier names and corresponding evaluation metrics (accuracy, F1 score, recall, precision).
+2. Run the code to determine and display the best models and their respective performance metrics.
 
-
-
-
+### Notes:
+The code assumes that metrics and metrics_pca are structured dictionaries/lists containing classifier names and their corresponding evaluation metrics.
 
 
 
