@@ -51,7 +51,7 @@ One motivation for representation learning is that learning algorithms can desig
 The data consists of grayscale images of faces, each measuring 48x48 pixels. The faces have been automatically aligned to be roughly centered and occupy a similar area within each image. The task is to categorize each face based on the emotion expressed, assigning it to one of seven categories (0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral).
 The dataset contains a total of 35,887 examples.
 
-## Prerequisites:
+## 1. Prerequisites:
 The following Python libraries are required:
 1. pandas
 2. numpy
@@ -65,4 +65,43 @@ The dataset is analyzed to understand the distribution of emotion occurrences. T
 
 ### Usage:
 To run the facial expression recognition model, follow these steps:
-1. 
+1. Load the dataset:
+2. Parse the data:
+3. Visualize sample images and labels:
+
+## 2. Principle Component Analysis
+### Question 1: Can you visualize the data projected onto two principal components?
+To visualize the data projected onto two principal components, we first need to perform PCA on the data.
+Then, we can plot the data points in the 2D space of the first two principal components.
+This will give you a visualization of the data projected onto the first two principal components.
+
+### Question 2: How to determine the optimal number of principal components using pca.explained_variance_? Explain your selection process.
+To determine the optimal number of principal components, we can look at the cumulative explained variance ratio. The explained variance ratio tells us how much of the total variance in the data is explained by each principal component.
+The selection process is as follows:
+
+1. Look at the plot of the cumulative explained variance ratio.
+2. Determine the "elbow" or "knee" point in the plot, which is the point where the curve starts to flatten out.
+3. The number of principal components corresponding to the elbow point is a good choice for the optimal number of components to use.
+
+In this case, the plot shows that the cumulative explained variance ratio reaches around 95% with about 500 principal components. So a reasonable choice for the optimal number of principal components would be 500.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
