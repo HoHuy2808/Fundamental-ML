@@ -42,3 +42,5 @@ This project is designed to be completed in the following steps:
 
 
 Feel free to modify and extend the notebook to explore further aspects of the data and experiment with different algorithms. Good luck.
+
+# Mini-Project for Fundamentals of Machine Learning Course:
