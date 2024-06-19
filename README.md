@@ -70,20 +70,41 @@ To run the facial expression recognition model, follow these steps:
 3. Visualize sample images and labels:
 
 ## 2. Principle Component Analysis
-### Question 1: Can you visualize the data projected onto two principal components?
-To visualize the data projected onto two principal components, we first need to perform PCA on the data.
-Then, we can plot the data points in the 2D space of the first two principal components.
-This will give you a visualization of the data projected onto the first two principal components.
+### Overview:
+This code snippet demonstrates the use of PCA for dimensionality reduction and visualization of data projected onto principal components. It also explains how to determine the optimal number of principal components using explained variance.
 
-### Question 2: How to determine the optimal number of principal components using pca.explained_variance_? Explain your selection process.
-To determine the optimal number of principal components, we can look at the cumulative explained variance ratio. The explained variance ratio tells us how much of the total variance in the data is explained by each principal component.
-The selection process is as follows:
+### Libraries Used:
+1. `scikit-learn` for PCA implementation (PCA class).
+2. `numpy` for numerical operations.
+3. `matplotlib.pyplot` for data visualization.
 
-1. Look at the plot of the cumulative explained variance ratio.
-2. Determine the "elbow" or "knee" point in the plot, which is the point where the curve starts to flatten out.
-3. The number of principal components corresponding to the elbow point is a good choice for the optimal number of components to use.
+### Steps:
+#### Visualization of Data Projected onto Two Principal Components
+1. The data (`images`) is reshaped as necessary for PCA.
+2. PCA is applied with `n_components=2` to project the data onto two principal components.
+3. The transformed data (`images_pca`) is visualized using a scatter plot, where each point represents a sample in the dataset projected onto the two principal components.
 
-In this case, the plot shows that the cumulative explained variance ratio reaches around 95% with about 500 principal components. So a reasonable choice for the optimal number of principal components would be 500.
+#### Determining the Optimal Number of Principal Components:
+1. PCA is performed again with a higher number of components (`n_components=2`).
+2. The cumulative explained variance ratio (`cumulative_sum`) is plotted against the number of components to visualize how much variance is explained as the number of components increases.
+3. The plot helps in determining the optimal number of principal components based on the cumulative explained variance.
+
+### Explanation:
+1. Visualization: PCA reduces the dimensionality of the data while preserving as much variance as possible. Visualizing data projected onto two principal components provides insight into the distribution and separation of data points in reduced dimensions.
+
+2. Optimal Number of Components: The plot of cumulative explained variance helps in deciding how many principal components to retain. The elbow or knee point in the plot, where adding more components doesn't significantly increase the explained variance, indicates a reasonable choice for the number of principal components.
+
+### Usage:
+1. Ensure `scikit-learn`, `numpy`, and `matplotlib` are installed.
+2. Replace `images` with your dataset or data array.
+3. Adjust `n_components` based on the number of principal components desired for analysis.
+4. Run the script to visualize data in reduced dimensions and determine the optimal number of principal components.
+
+### Notes:
+1. PCA is useful for reducing data dimensionality, especially in cases where the original dataset has a large number of features.
+2. The optimal number of principal components should balance computational efficiency with the amount of variance explained by the reduced dimensions.
+
+
 
 ## 3. Image Classification:
 ### Overview:
